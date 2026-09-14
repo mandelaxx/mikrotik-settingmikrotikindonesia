@@ -5,7 +5,6 @@
 # Firewall IPv6 BUKAN OPSIONAL — bagian 5 adalah WAJIB sekeluaranya.
 # Kasus: ISP/RT-RW Net dengan IPv6 dari upstream (transit/upstream BGP,
 # PPPoE dari ISP lebih besar, atau tunnel bila tak ada native).
-
 ## ============================================================
 ## 0. DATA WAJIB SEBELUM CONFIG (DILARANG MENGARANG)
 ## ============================================================
