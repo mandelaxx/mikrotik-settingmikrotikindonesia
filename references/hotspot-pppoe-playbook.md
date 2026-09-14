@@ -1,5 +1,4 @@
 # PLAYBOOK HOTSPOT / PPPoE RIBUAN KLIENT — settingmikrotikindonesia.com
-
 ## A. PPPoE SERVER (prioritas ISP — lebih stabil & hemat CPU dari hotspot)
 /interface pppoe-server server
 add service-name=smi-pppoe interface=[bridge-LAN-asli-user] disabled=no \
