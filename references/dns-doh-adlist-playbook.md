@@ -4,7 +4,6 @@
 #         hemat CPU/bandwidth). DoH = privacy & anti-tamper ISP lain.
 #         Adlist = blokir iklan/malware di level router (nilai jual ke klien).
 # Kasus: Router sebagai DNS server klien (gateway ISP/RT-RW Net).
-
 ## ============================================================
 ## 0. DATA WAJIB SEBELUM CONFIG
 ## ============================================================
