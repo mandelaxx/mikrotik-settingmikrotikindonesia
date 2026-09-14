@@ -3,7 +3,6 @@
 #          Logging smi- | Parameter eksplisit (SKILL.md bagian 6)
 # Kasus: Pisah manajemen/klien/hotspot/OT, VLAN melewati 1 kabel trunk,
 #        VLAN per-port switch chip (ROSv7), VLAN wireless/bridge VLAN filtering
-
 ## ============================================================
 ## 0. DATA WAJIB SEBELUM CONFIG
 ## ============================================================
