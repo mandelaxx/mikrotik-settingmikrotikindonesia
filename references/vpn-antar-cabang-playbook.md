@@ -1,6 +1,5 @@
 # PLAYBOOK VPN ANTAR CABANG — settingmikrotikindonesia.com
 # Standar: established,related hidup | routing protokol exempt | BERLOG
-
 ## A. PILIH PROTOKOL
 | Kebutuhan | Pilihan |
 |---|---|
