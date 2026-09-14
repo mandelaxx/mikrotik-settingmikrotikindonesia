@@ -1,7 +1,6 @@
 # PBR BATCH SCHEDULER BALANCER — settingmikrotikindonesia.com
 # Standar: TANPA fasttrack | Logging smi- | Comment brand | Sticky 100%
 # Kasus: ISP/RT-RW Net 1.000–5.000+ klien PPPoE/DHCP, balance 4 WAN 1:1:1:1
-
 ## ARSITEKTUR
 - DILARANG script berat di PPP Profile On Up/On Down (brain-storm:
   5.000 klien login pagi hari = 5.000 eksekusi script bersamaan = CPU mati).
