@@ -46,7 +46,6 @@ add name=smi-bgp-isp as=[AS_ISP] router-id=[IP_LOOPBACK] \
 /ip firewall address-list
 add list=smi-bgp-networks address=[PREFIX_ISP] \
     comment="settingmikrotikindonesia.com - Prefix milik ISP yang diumumkan ke upstream"
-
 ## 2.2 Connection per upstream (contoh 2 upstream):
 /routing bgp connection
 add name=smi-bgp-upstream1 remote.address=[IP_TRANSIT1] remote.as=[AS_UP1] \
