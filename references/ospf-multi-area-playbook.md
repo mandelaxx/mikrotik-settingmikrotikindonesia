@@ -1,7 +1,6 @@
 # PLAYBOOK OSPF MULTI-AREA — settingmikrotikindonesia.com
 # Standar: RouterOS v7 | Router-id = loopback | Filter WAJIB | Logging smi-
 # Kasus: ISP multi-pop, core + beberapa POP, konsolidasi LSA & kontrol path
-
 ## ============================================================
 ## 0. DATA WAJIB SEBELUM CONFIG
 ## ============================================================
