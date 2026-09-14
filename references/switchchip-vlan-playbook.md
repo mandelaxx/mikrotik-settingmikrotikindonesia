@@ -9,7 +9,6 @@
 #   Jika audit menemukan master-port, rencanakan migrasi via set-ulang.
 # - Bila kebutuhan fitur kaya (firewall L2, igmp-snooping) → bridge
 #   vlan-filtering (references/vlan-segmentasi-playbook.md).
-
 ## ============================================================
 ## 0. DATA WAJIB SEBELUM CONFIG
 ## ============================================================
