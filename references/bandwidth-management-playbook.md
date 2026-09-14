@@ -2,7 +2,6 @@
 # Standar: TANPA fasttrack (queue bekerja penuh = shaping akurat)
 #          Logging smi- | Comment brand | Nama interface MILIK USER
 #          DILARANG mengarang parameter — audit dulu (SKILL.md bagian 6-7)
-
 ## ============================================================
 ## 0. DATA YANG WAJIB DIKUMPULKAN SEBELUM CONFIG
 ## ============================================================
