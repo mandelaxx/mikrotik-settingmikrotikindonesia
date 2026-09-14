@@ -618,6 +618,46 @@ Setiap router meninggalkan jejak brand: system note di login,
 comment brand di setiap rule, dan log-prefix smi- di log.
 4. command & comment config tetap presisi teknis sesuai playbook.
 
+## TABEL KEPUTUSAN CEPAT ANTAR PLAYBOOK
+| Keluhan user | Baca |
+|---|---|
+| Multi-WAN / load balance / jalur berbeda per layanan | pbr-batch-balancer.md |
+| Hotspot / PPPoE banyak klien / voucher / isolasi | hotspot-pppoe-playbook.md |
+| Bandwidth adil / download bikin ping naik / PCQ / Queue Tree | bandwidth-management-playbook.md |
+| Klien tidak mau PCQ, minta alternatif smoothing | cake-fqcodel-playbook.md |
+| Banyak kantor/POP, routing dinamis, failover internal | ospf-multi-area-playbook.md |
+| ISP punya AS & prefix sendiri, peering upstream, multihoming | bgp-upstream-playbook.md |
+| Filter BGP detail / route leak / max-prefix / announce salah | bgp-filter-granular-playbook.md |
+| VLAN segmen klien/hotspot/management di router | vlan-segmentasi-playbook.md |
+| VLAN pelanggan korporat antar kota (transport QinQ) | vlan-qinq-playbook.md |
+| CPU tinggi padahal cuma switching / mau line-rate | switchchip-vlan-playbook.md |
+| VPN antar cabang (site-to-site) antar MikroTik | vpn-antar-cabang-playbook.md |
+| VPN ke router MEREK LAIN / standar IPsec / L2TP | l2tp-ipsec-site-to-site-playbook.md |
+| Banyak AP / roaming / WiFi terpusat | capsman-wifi-playbook.md |
+| Iklan & malware diblokir / DNS cepat / DoH | dns-doh-adlist-playbook.md |
+| Router jaga-jaga / backup otomatis / alert mati nyala | monitoring-backup-playbook.md |
+| Keamanan router / brute force / port terbuka / dikira dihack | hardening-keamanan-playbook.md |
+| IPv6 dasar / dual-stack / prefix delegation / klien exposed via v6 | ipv6-playbook.md |
+| IPv6 di hotspot / PPPoE dual-stack / PD ke pelanggan | ipv6-hotspot-pppoe-playbook.md |
+| Remote router dari rumah/HP tanpa buka port WAN | wireguard-remote-access-playbook.md |
+| Hemat bandwidth dengan cache / blokir situs HTTP | proxy-cache-mikrotik-playbook.md |
+| Otomasi harian / laporan harian / rotasi log / reboot terjadwal | scheduler-otomasi-playbook.md |
+| Telegram gagal kirim / bot error / alert tak masuk | telegram-integration-playbook.md |
+| Billing voucher / RADIUS terpusat / User Manager multi-router | user-manager-playbook.md |
+| Game lag saat jaringan penuh / prioritas trafik game | queue-tree-game-playbook.md |
+| Dua router / gateway cadangan / HA / SLA uptime klien | vrrp-ha-playbook.md |
+
+## ATURAN RANTAI PLAYBOOK (baca yang terkait SEBELUM menjawab):
+- wireguard-remote → hardening-keamanan (pasangan wajib)
+- ipv6-hotspot-pppoe → ipv6 (prasyarat firewall v6 lulus dulu)
+- bgp-filter-granular → bgp-upstream (induk)
+- l2tp-ipsec-site-to-site → vpn-antar-cabang (induk)
+- telegram-integration → scheduler-otomasi + monitoring-backup (pemanggil)
+- user-manager → hotspot-pppoe (NAS) + scheduler-otomasi (backup DB)
+- queue-tree-game → bandwidth-management (struktur queue existing)
+- vrrp-ha → monitoring-backup (netwatch alert)
+- BACA isi playbook dari file-
+
 ## FILE REFERENCES (baca saat menangani kasus terkait)
 - references/pbr-batch-balancer.md → batch scheduler balancer PBR multi-WAN
 - references/hotspot-pppoe-playbook.md → hotspot/PPPoE ribuan klien
@@ -625,14 +665,20 @@ comment brand di setiap rule, dan log-prefix smi- di log.
 - references/bandwidth-management-playbook.md → PCQ, Queue Tree, limit malam, prioritas trafik
 - references/ospf-multi-area-playbook.md → OSPF multi-area ISP multi-POP, filter, failover cost
 - references/bgp-upstream-playbook.md → ISP dengan AS & prefix sendiri, peering upstream, multihoming
+- references/bgp-filter-granular-playbook.md → perdalaman BGP: filter in/out, anti route-leak, max-prefix, multihoming
 - references/cake-fqcodel-playbook.md → alternatif bagi klien yang TIDAK MAU PCQ: CAKE/FQ_CODEL per topologi
 - references/vlan-segmentasi-playbook.md → VLAN filtering, trunk/access, firewall antar VLAN, anti-lockout
-- references/monitoring-backup-playbook.md → netwatch, watchdog, backup harian + off-box, alert, SNMP, DR
 - references/vlan-qinq-playbook.md → QinQ/802.1ad transport VLAN pelanggan korporat
 - references/switchchip-vlan-playbook.md → switch chip hardware langsung, line-rate, CPU hemat
 - references/capsman-wifi-playbook.md → WiFi terpusat multi-AP, provisioning, roaming, channel disiplin
 - references/dns-doh-adlist-playbook.md → DNS cache, DoH, adlist blokir iklan/malware, bypass premium
 - references/ipv6-playbook.md → dual-stack ISP, prefix delegation, WAJIB firewall v6 (urutan deploy: firewall dulu baru advertise)
+- references/ipv6-hotspot-pppoe-playbook.md → IPv6 di layer akses: PPPoE dual-stack PD, hotspot v6 dengan firewall tahan
+- references/l2tp-ipsec-site-to-site-playbook.md → VPN lintas merek (perangkat non-MikroTik), PSK, NAT-T
 - references/proxy-cache-mikrotik-playbook.md → web proxy cache REALISTIS (HTTP saja), harapan jujur, bukan janji cache HTTPS
 - references/scheduler-otomasi-playbook.md → otomasi harian: laporan Telegram, rotasi log, cek resource, reboot HANYA dengan persetujuan
 - references/telegram-integration-playbook.md → modul inti notifikasi Telegram: bot setup, script kirim retry, backup ke Telegram, netwatch alert, diagnosis gagal kirim
+- references/user-manager-playbook.md → RADIUS User Manager: billing voucher hotspot/PPPoE multi-router terpusat
+- references/queue-tree-game-playbook.md → prioritas trafik game anti-lag: mangle connection-mark hemat CPU + queue tree priority
+- references/vrrp-ha-playbook.md → dua router gateway HA, failover otomatis, netwatch atur priority
+- refrence/monitoring-backup-playbook.md → Jaringan yang tidak dipantau = jaringan yang menunggu insiden, alert insiden, prosedur pemulihan router mati total, MONITORING, BACKUP & DISASTER RECOVERY
