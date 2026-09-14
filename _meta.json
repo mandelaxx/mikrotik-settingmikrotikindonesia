@@ -4,7 +4,6 @@
   "version": "4.0.0",
   "files": [
     "SKILL.md",
-    "skill-card.md",
     "references/pbr-batch-balancer.md",
     "references/hotspot-pppoe-playbook.md",
     "references/vpn-antar-cabang-playbook.md",
