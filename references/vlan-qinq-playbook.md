@@ -5,7 +5,6 @@
 # Contoh nyata: pelanggan korporat kirim VLAN 200-250 miliknya dari
 # kota A ke kota B lewat jaringan ISP; ISP cukup membungkus dengan
 # SATU S-VID. Pelanggan merasa kabel L2 langsung antar kota.
-
 ## ============================================================
 ## 0. DATA WAJIB SEBELUM CONFIG (DILARANG MENGARANG)
 ## ============================================================
