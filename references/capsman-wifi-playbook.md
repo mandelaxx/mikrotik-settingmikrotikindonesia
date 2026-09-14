@@ -3,7 +3,6 @@
 # Kasus: ISP/RT-RW Net dengan banyak AP (2 - 50 unit) — satu controller
 #         mengatur semua SSID, channel, password, dan CAP. AP mati tinggal
 #         ganti unit, config otomatis turun. Roaming antar AP mulus.
-
 ## ============================================================
 ## 0. DATA WAJIB SEBELUM CONFIG (DILARANG MENGARANG)
 ## ============================================================
