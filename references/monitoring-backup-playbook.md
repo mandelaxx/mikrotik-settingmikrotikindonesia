@@ -3,7 +3,6 @@
 # Filosofi: "Jaringan yang tidak dipantau = jaringan yang menunggu insiden."
 # Kasus: ISP/RT-RW Net — pemantauan mandiri, backup otomatis terjadwal,
 #         alert insiden, prosedur pemulihan router mati total.
-
 ## ============================================================
 ## 0. DATA WAJIB SEBELUM CONFIG
 ## ============================================================
