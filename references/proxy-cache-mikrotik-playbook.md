@@ -10,7 +10,6 @@
 ## - KESIMPULAN: gunakan sesuai HARAPAN REALISTIS, bukan janji
 ##   "hemat 50% bandwidth". Bila user berharap cache YouTube/Netflix
 ##   → JELASKAN TIDAK BISA, jangan lanjut config dengan harapan palsu.
-
 ## ============================================================
 ## 0. DATA WAJIB SEBELUM CONFIG
 ## ============================================================
